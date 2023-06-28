@@ -1,4 +1,4 @@
-import PropTypes from 'propTypes';
+import PropTypes from 'prop-types';
 
 export const Statistics = ({
   good,
