@@ -24,7 +24,7 @@ export class App extends Component {
   };
 
   totalPercentage = () => {
-    if (this.totalFeedback > 0)
+    if (this.totalFeedback() > 0)
       return Math.round((this.state.good / this.totalFeedback()) * 100) || 0;
   };
 
