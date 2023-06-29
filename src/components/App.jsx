@@ -25,7 +25,7 @@ export class App extends Component {
 
   totalPercentage = () => {
     if (this.totalFeedback > 0)
-      return Math.round((this.state.good / this.totalFeedback()) * 100) || '-';
+      return Math.round((this.state.good / this.totalFeedback()) * 100) || 0;
   };
 
   render() {
@@ -35,11 +35,11 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
-            onLeaveFeedback={this.onLeaveFeedback()}
+            onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
         <Section title="Statistics">
-          {this.totalFeedback() > 0 ? (
+          {this.totalFeedback > 0 ? (
             <Statistics
               good={good}
               neutral={neutral}
